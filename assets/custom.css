@@ -1,0 +1,44 @@
+/* Modify this file to add your own custom styles */
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Bellefair&display=swap');
+body {
+  direction: rtl;
+  unicode-bidi: embed;
+  text-align: right;
+  font-family: 'Bellefair', serif;
+}
+body {
+  margin-right: 30mm;
+  margin-left: 70mm;
+}
+/* ── Headings ─────────────────────────────────────────────────────────────── */
+
+h1 {
+  font-family: 'Narkisim', 'Bona Nova', serif;
+  direction: rtl;
+  text-align: right;
+}
+
+h2 {
+  font-family: 'Narkisim', 'Bona Nova', serif;
+  direction: rtl;
+  text-align: right;
+}
+
+/* ── Blockquotes ─────────────────────────────────────────────────────────── */
+
+blockquote {
+  font-family: 'Narkisim', 'Bona Nova', serif;
+  direction: rtl;
+  text-align: right;
+}
+
+/* ── Margin notes (mirrors marginalia: outer side, 40mm wide) ─────────────
+   Positioned on the left (outer) side in RTL layout.                     */
+.margin-note {
+  position: absolute;
+  padding-right: 1.2rem;
+  left: 20mm;           /* far: 20mm from page edge */
+  width: 40mm;
+  direction: rtl;
+  text-align: right;
+}
