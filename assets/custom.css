@@ -10,16 +10,10 @@ body {
   margin-right: 30mm;
   margin-left: 70mm;
 }
+
 /* ── Headings ─────────────────────────────────────────────────────────────── */
 
-h1 {
-  font-family: 'Narkisim', 'Bona Nova', serif;
-  font-style: normal;
-  direction: rtl;
-  text-align: right;
-}
-
-h2 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Narkisim', 'Bona Nova', serif;
   font-style: normal;
   direction: rtl;
@@ -29,9 +23,20 @@ h2 {
 /* ── Blockquotes ─────────────────────────────────────────────────────────── */
 
 blockquote {
-  font-family: 'Narkisim', 'Bona Nova', serif;
+  /* font-family: 'Narkisim', 'Bona Nova', serif; */
   direction: rtl;
   text-align: right;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  width: auto;
+}
+
+blockquote footer,
+blockquote cite {
+  display: block;
+  text-align: left;
+  direction: ltr;
 }
 
 
