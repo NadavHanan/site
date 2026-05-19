@@ -14,12 +14,14 @@ body {
 
 h1 {
   font-family: 'Narkisim', 'Bona Nova', serif;
+  font-style: normal;
   direction: rtl;
   text-align: right;
 }
 
 h2 {
   font-family: 'Narkisim', 'Bona Nova', serif;
+  font-style: normal;
   direction: rtl;
   text-align: right;
 }
