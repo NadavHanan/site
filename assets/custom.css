@@ -32,13 +32,25 @@ blockquote {
   text-align: right;
 }
 
-/* ── Margin notes (mirrors marginalia: outer side, 40mm wide) ─────────────
-   Positioned on the left (outer) side in RTL layout.                     */
-.margin-note {
-  position: absolute;
-  padding-right: 1.2rem;
-  left: 20mm;           /* far: 20mm from page edge */
-  width: 40mm;
-  direction: rtl;
+
+/* ── Margin note ─────────────────────────────────────────────────────────── */
+
+.marginnote,
+.sidenote {
+  float: left;
+  clear: left;
+  margin-right: 0;
+  margin-left: -60%;   /* pulls note into the left (outer) margin */
   text-align: right;
+  direction: rtl;
+}
+ 
+/* Mobile toggle — preserve tufte's collapse/expand behaviour */
+.margin-toggle:checked + .sidenote,
+.margin-toggle:checked + .marginnote {
+  display: block;
+  float: left;
+  margin-left: 1rem;
+  margin-right: 0;
+  width: 95%;
 }
