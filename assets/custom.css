@@ -469,11 +469,13 @@ figure[role="math"] {
     width: 100%;
   }
 
-  /* Typst emits no margin-toggle label/checkbox, so margin notes would be
-     unreachable if hidden. Keep them readable stacked under the paragraph. */
+  /* Tufte-style open/close with pure CSS.
+     Typst emits no `.margin-toggle` checkbox, so we drive the toggle with
+     `:target`: the footnote-ref link (`#fn-N`) opens the note, the note's own
+     back-link (`#fnref-N`) closes it. Hover/focus also reveal it. */
   .sidenote,
   .marginnote {
-    display: block;
+    display: none;
     float: none;
     width: 100%;
     margin: 0.5em 0;
@@ -481,6 +483,16 @@ figure[role="math"] {
     border-inline-start: 2px solid #ccc;
     font-size: 1rem;
     line-height: 1.4;
+  }
+
+  /* Pure-CSS open/close, like tufte's checkbox toggle:
+     click the footnote number -> #fn-N -> :target opens the note;
+     click the note's back-link -> #fnref-N -> :target drops -> closes. */
+  .footnote-ref:hover + .sidenote,
+  .footnote-ref:hover + .marginnote,
+  .sidenote:target,
+  .marginnote:target {
+    display: block;
   }
 
   label { cursor: pointer; }
