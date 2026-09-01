@@ -394,6 +394,8 @@ header nav a:focus-visible {
 a.footnote-ref-link {
   background-image: none;
   text-shadow: none !important;
+  /* Remove underline from footnote markers and the back-links inside notes */
+  text-decoration: none !important;
 }
 
 /* Math */
@@ -469,13 +471,11 @@ figure[role="math"] {
     width: 100%;
   }
 
-  /* Tufte-style open/close with pure CSS.
-     Typst emits no `.margin-toggle` checkbox, so we drive the toggle with
-     `:target`: the footnote-ref link (`#fn-N`) opens the note, the note's own
-     back-link (`#fnref-N`) closes it. Hover/focus also reveal it. */
-  .sidenote,
-  .marginnote {
-    display: none;
+  /* Plain margin notes (e.g. figure captions, no number/no id) always show,
+     stacked blocks under the paragraph. */
+  .marginnote,
+  .sidenote {
+    display: block;
     float: none;
     width: 100%;
     margin: 0.5em 0;
@@ -485,13 +485,15 @@ figure[role="math"] {
     line-height: 1.4;
   }
 
-  /* Pure-CSS open/close, like tufte's checkbox toggle:
-     click the footnote number -> #fn-N -> :target opens the note;
+  /* Footnotes (with a number) get a pure-CSS open/close, like tufte's
+     checkbox toggle: click the footnote number -> #fn-N -> :target opens;
      click the note's back-link -> #fnref-N -> :target drops -> closes. */
-  .footnote-ref:hover + .sidenote,
+  .footnote-ref + .marginnote {
+    display: none;
+  }
+
   .footnote-ref:hover + .marginnote,
-  .sidenote:target,
-  .marginnote:target {
+  .footnote-ref + .marginnote:target {
     display: block;
   }
 
